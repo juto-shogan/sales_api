@@ -1,5 +1,6 @@
+# /src/sales_api
 from fastapi import FastAPI
-from sales_api.routes import customers
+from sales_api.routers import customers
 
 app = FastAPI()
 

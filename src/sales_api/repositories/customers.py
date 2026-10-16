@@ -15,6 +15,9 @@ def get_all_customers(
         .limit(limit)
         .offset(offset)
     )
-
     result = db.execute(stmt)
     return result.scalars().all()
+
+def get_specific_customer(db: Session, id: int):
+    stmt = select(Customer).where(Customer.customerid == id)
+    return db.execute(stmt).scalars().first()
